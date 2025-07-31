@@ -1,6 +1,6 @@
  // Panier (stocké dans localStorage)
         // let cart = JSON.parse(localStorage.getItem('cart')) || [];
-           // let cart =[];
+           let cart =[];
         // Sauvegarder les produits dans localStorage
         // function saveProducts() {
         //     localStorage.setItem('products', JSON.stringify(products));
