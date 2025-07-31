@@ -12,36 +12,33 @@
             { id: 8, name: "Enceinte Solaire", price: "5 000 000", category: "electronics", image: "anceinte.jpg" }
         ]; // Fonction utilitaire pour tester la disponibilité de localStorage
             function isLocalStorageAvailable() {
-                try {
-                    const testKey = '__test__';
-                    window.localStorage.setItem(testKey, '1');
-                    window.localStorage.removeItem(testKey);
-                    return true;
-                } catch (e) {
-                    return false;
-                }
+            try {
+                const testKey = '__test__';
+                window.localStorage.setItem(testKey, '1');
+                window.localStorage.removeItem(testKey);
+                return true;
+            } catch (e) {
+                return false;
             }
+        }
 
-let products = defaultProducts;
-if (isLocalStorageAvailable()) {
-    // On tente de charger les produits du localStorage
-    try {
-        const stored = localStorage.getItem('products');
-        if (stored) {
-            const parsed = JSON.parse(stored);
-            // Si le tableau est vide ou corrompu, on utilise la liste par défaut
-            if (Array.isArray(parsed) && parsed.length > 0) {
-                products = parsed;
-            } else {
+        let products = defaultProducts;
+        if (isLocalStorageAvailable()) {
+            try {
+                const stored = localStorage.getItem('products');
+                if (stored) {
+                    const parsed = JSON.parse(stored);
+                    if (Array.isArray(parsed) && parsed.length > 0) {
+                        products = parsed;
+                    } else {
+                        products = defaultProducts;
+                        localStorage.setItem('products', JSON.stringify(defaultProducts));
+                    }
+                } else {
+                    localStorage.setItem('products', JSON.stringify(defaultProducts));
+                }
+            } catch (e) {
                 products = defaultProducts;
                 localStorage.setItem('products', JSON.stringify(defaultProducts));
             }
-        } else {
-            // Si rien dans le localStorage, on initialise
-            localStorage.setItem('products', JSON.stringify(defaultProducts));
         }
-    } catch (e) {
-        products = defaultProducts;
-        localStorage.setItem('products', JSON.stringify(defaultProducts));
-    }
-}
