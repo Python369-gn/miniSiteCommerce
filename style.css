@@ -1,6 +1,6 @@
 /* Footer stylisé */
 .footer {
-      width: 100%;
+    width: 100%;
     background: linear-gradient(90deg, #5ec576 0%, #a8e063 100%); /* Vert plus franc et lumineux */
     color: #2c3e50;
     text-align: center;
@@ -23,11 +23,10 @@
         }
 
         body {
-             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #5ec576 0%, #a8e063 100%);
             color: #333;
             min-height: 100vh;
-        }
         }
 
         .container {
@@ -37,7 +36,7 @@
         }
 
         header {
-            background: rgba(183, 224, 194, 0.7);
+            background: rgba(94, 197, 118, 0.7);
             backdrop-filter: blur(10px);
             color: #2c3e50;
             padding: 1rem 0;
@@ -93,7 +92,7 @@
         .cart-icon {
             position: relative;
             cursor: pointer;
-            background: rgba(183, 224, 194, 0.5);
+            background: rgba(94, 197, 118, 0.5);
             padding: 12px 20px;
             border-radius: 25px;
             display: flex;
@@ -103,7 +102,7 @@
         }
 
         .cart-icon:hover {
-            background: rgba(183, 224, 194, 0.8);
+            background: rgba(94, 197, 118, 0.8);
             transform: translateY(-2px);
         }
 
@@ -207,13 +206,13 @@
             text-align: center;
             transition: all 0.4s ease;
             backdrop-filter: blur(10px);
-            border: 1px solid #b7e0c2;
+            border: 1px solid #5ec576;
         }
 
         .product-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            border-color: #b7e0c2;
+            border-color: #5ec576;
         }
 
         .product-image {
@@ -222,7 +221,7 @@
             object-fit: cover;
             border-radius: 12px;
             margin-bottom: 20px;
-            border: 3px solid #b7e0c2;
+            border: 3px solid #5ec576;
         }
 
         .product-name {
@@ -233,7 +232,7 @@
         }
 
         .product-price {
-            color: #5e8d6a;
+            color: #399c5a;
             font-size: 1.4em;
             font-weight: bold;
             margin-bottom: 15px;
@@ -246,7 +245,7 @@
         }
 
         .add-to-cart-btn {
-            background: linear-gradient(45deg, #b7e0c2, #d0f5df);
+            background: linear-gradient(45deg, #5ec576, #a8e063);
             color: #2c3e50;
             border: none;
             padding: 12px 25px;
@@ -256,17 +255,17 @@
             transition: all 0.3s ease;
             width: 100%;
             font-size: 1.1em;
-            border: 2px solid #b7e0c2;
+            border: 2px solid #5ec576;
         }
 
         .add-to-cart-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(183, 224, 194, 0.4);
-            background: linear-gradient(45deg, #d0f5df, #b7e0c2);
+            box-shadow: 0 5px 15px rgba(94, 197, 118, 0.4);
+            background: linear-gradient(45deg, #a8e063, #5ec576);
         }
 
         .add-to-cart-btn.added {
-            background: linear-gradient(45deg, #b7e0c2, #d0f5df);
+            background: linear-gradient(45deg, #5ec576, #a8e063);
         }
 
         .products-grid {
@@ -406,7 +405,7 @@
         }
 
         .category-btn {
-            background: rgba(183, 224, 194, 0.5);
+            background: rgba(94, 197, 118, 0.5);
             color: #2c3e50;
             border: none;
             padding: 12px 25px;
@@ -418,13 +417,13 @@
         }
 
         .category-btn:hover {
-            background: rgba(183, 224, 194, 0.8);
+            background: rgba(94, 197, 118, 0.8);
             transform: translateY(-2px);
         }
 
         .category-btn.active {
-            background: rgba(183, 224, 194, 1);
-            border: 2px solid #5e8d6a;
+            background: rgba(94, 197, 118, 1);
+            border: 2px solid #399c5a;
         }
 
         .notification {
@@ -501,7 +500,7 @@
         }
 
         .navbar-green {
-            background: linear-gradient(135deg, #b7e0c2 0%, #d0f5df 100%);
+            background: linear-gradient(135deg, #5ec576 0%, #a8e063 100%);
             padding: 15px 0;
             border-radius: 10px;
             margin: 20px 0;
