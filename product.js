@@ -8,6 +8,6 @@
             { id: 4, name: "T-Shirt Bio", price: "25 000 000", category: "clothing", image: "T-Sh.jpg" },
             { id: 5, name: "Jeans Durable", price: "19 000 000", category: "clothing", image: "jean.jpg" },
             { id: 6, name: "Lampe LED", price: "5 000 000", category: "home", image: "lampe.jpg" },
-            { id: 7, name: "Coussin Naturel", price: "14 000 000", category: "home", image: "coussin.jpg" },
+            { id: 7, name: "Coussin Naturel", price: "14 000 000", category: "home", image: "coussin.jpeg" },
             { id: 8, name: "Enceinte Solaire", price: "5 000 000", category: "electronics", image: "anceinte.jpg" }
         ];
