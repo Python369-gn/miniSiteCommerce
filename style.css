@@ -23,10 +23,11 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #b7e0c2 0%, #d0f5df 100%);
+             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #5ec576 0%, #a8e063 100%);
             color: #333;
             min-height: 100vh;
+        }
         }
 
         .container {
