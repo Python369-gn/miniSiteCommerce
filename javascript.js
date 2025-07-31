@@ -11,9 +11,7 @@
         //     localStorage.setItem('cart', JSON.stringify(cart));
         //     updateCartDisplay();
         // }
-         function saveCart() {
-                  updateCartDisplay();
-              }
+ 
 
 
         // function updateCartDisplay() {
