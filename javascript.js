@@ -11,22 +11,47 @@
         //     localStorage.setItem('cart', JSON.stringify(cart));
         //     updateCartDisplay();
         // }
+         function saveCart() {
+                  updateCartDisplay();
+              }
 
-        function updateCartDisplay() {
-            const cartCount = document.getElementById('cartCount');
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            cartCount.textContent = totalItems;
-        }
 
-        function showNotification(message) {
-            const notification = document.getElementById('notification');
-            notification.textContent = message;
-            notification.classList.add('show');
+        // function updateCartDisplay() {
+        //     const cartCount = document.getElementById('cartCount');
+        //     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        //     cartCount.textContent = totalItems;
+        // }
+         function addToCart(productId) {
+              const existingItem = cart.find(item => item.id === productId);
+              if (existingItem) {
+                  existingItem.quantity += 1;
+              } else {
+                  cart.push({ id: productId, quantity: 1 });
+              }
+              saveCart();
+              showNotification('Produit ajouté au panier !');
+              // Animation du bouton
+              if (event && event.target.classList.contains('add-to-cart-btn')) {
+                  const button = event.target;
+                  button.textContent = '✓ Ajouté !';
+                  button.classList.add('added');
+                  setTimeout(() => {
+                      button.textContent = 'Ajouter au panier';
+                      button.classList.remove('added');
+                  }, 2000);
+              }
+              displayCart(); // Mettre à jour l'affichage du panier si besoin
+          }
+
+        // function showNotification(message) {
+        //     const notification = document.getElementById('notification');
+        //     notification.textContent = message;
+        //     notification.classList.add('show');
             
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
-        }
+        //     setTimeout(() => {
+        //         notification.classList.remove('show');
+        //     }, 3000);
+        // }
 
         function showView(viewName) {
             // Cacher toutes les vues
