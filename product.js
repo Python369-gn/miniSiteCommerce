@@ -11,6 +11,23 @@
             { id: 7, name: "Coussin Naturel", price: "14 000 000", category: "home", image: "coussin.jpeg" },
             { id: 8, name: "Enceinte Solaire", price: "5 000 000", category: "electronics", image: "anceinte.jpg" }
         ];
-         // Toujours mettre à jour le localStorage avec la dernière version des produits
-         localStorage.setItem('products', JSON.stringify(defaultProducts));
-         let products = defaultProducts;
+         function isLocalStorageAvailable() {
+            try {
+                const testKey = '__test__';
+                window.localStorage.setItem(testKey, '1');
+                window.localStorage.removeItem(testKey);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        let products;
+        if (isLocalStorageAvailable()) {
+            // Toujours mettre à jour le localStorage avec la dernière version des produits
+            localStorage.setItem('products', JSON.stringify(defaultProducts));
+            products = defaultProducts;
+        } else {
+            // Utiliser la liste par défaut si localStorage n'est pas disponible
+            products = defaultProducts;
+        }
