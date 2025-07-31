@@ -10,36 +10,38 @@
             { id: 6, name: "Lampe LED", price: "5 000 000", category: "home", image: "lampe.jpg" },
             { id: 7, name: "Coussin Naturel", price: "14 000 000", category: "home", image: "coussin.jpeg" },
             { id: 8, name: "Enceinte Solaire", price: "5 000 000", category: "electronics", image: "anceinte.jpg" }
-        ];
-                // Fonction utilitaire pour tester la disponibilité de localStorage
-                function isLocalStorageAvailable() {
-                    try {
-                        const testKey = '__test__';
-                        window.localStorage.setItem(testKey, '1');
-                        window.localStorage.removeItem(testKey);
-                        return true;
-                    } catch (e) {
-                        return false;
-                    }
+        ]; // Fonction utilitaire pour tester la disponibilité de localStorage
+            function isLocalStorageAvailable() {
+                try {
+                    const testKey = '__test__';
+                    window.localStorage.setItem(testKey, '1');
+                    window.localStorage.removeItem(testKey);
+                    return true;
+                } catch (e) {
+                    return false;
                 }
-                
-                let products;
-                if (isLocalStorageAvailable()) {
-                    // Si localStorage contient déjà des produits, on les utilise
-                    const stored = localStorage.getItem('products');
-                    if (stored) {
-                        try {
-                            products = JSON.parse(stored);
-                        } catch (e) {
-                            products = defaultProducts;
-                            localStorage.setItem('products', JSON.stringify(defaultProducts));
-                        }
-                    } else {
-                        // Sinon, on initialise avec la liste par défaut
-                        products = defaultProducts;
-                        localStorage.setItem('products', JSON.stringify(defaultProducts));
-                    }
-                } else {
-                    // Si localStorage indisponible, fallback sur la liste par défaut
-                            products = defaultProducts;
-   }
+            }
+
+let products = defaultProducts;
+if (isLocalStorageAvailable()) {
+    // On tente de charger les produits du localStorage
+    try {
+        const stored = localStorage.getItem('products');
+        if (stored) {
+            const parsed = JSON.parse(stored);
+            // Si le tableau est vide ou corrompu, on utilise la liste par défaut
+            if (Array.isArray(parsed) && parsed.length > 0) {
+                products = parsed;
+            } else {
+                products = defaultProducts;
+                localStorage.setItem('products', JSON.stringify(defaultProducts));
+            }
+        } else {
+            // Si rien dans le localStorage, on initialise
+            localStorage.setItem('products', JSON.stringify(defaultProducts));
+        }
+    } catch (e) {
+        products = defaultProducts;
+        localStorage.setItem('products', JSON.stringify(defaultProducts));
+    }
+}
