@@ -1,14 +1,14 @@
 /* Footer stylisé */
 .footer {
-    width: 100%;
-    background: linear-gradient(90deg, #b7e0c2 0%, #d0f5df 100%); /* Vert très doux */
+      width: 100%;
+    background: linear-gradient(90deg, #5ec576 0%, #a8e063 100%); /* Vert plus franc et lumineux */
     color: #2c3e50;
     text-align: center;
     padding: 20px 0 10px 0;
     font-size: 1.1em;
     font-weight: 500;
     letter-spacing: 1px;
-    border-top: 2px solid rgba(46,204,113,0.08);
+    border-top: 2px solid rgba(46,204,113,0.18);
     margin-top: 40px;
     box-shadow: 0 -2px 20px rgba(0,0,0,0.07);
     border-radius: 15px 15px 0 0;
