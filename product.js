@@ -11,23 +11,35 @@
             { id: 7, name: "Coussin Naturel", price: "14 000 000", category: "home", image: "coussin.jpeg" },
             { id: 8, name: "Enceinte Solaire", price: "5 000 000", category: "electronics", image: "anceinte.jpg" }
         ];
-         function isLocalStorageAvailable() {
-            try {
-                const testKey = '__test__';
-                window.localStorage.setItem(testKey, '1');
-                window.localStorage.removeItem(testKey);
-                return true;
-            } catch (e) {
-                return false;
-            }
-        }
-
-        let products;
-        if (isLocalStorageAvailable()) {
-            // Toujours mettre à jour le localStorage avec la dernière version des produits
-            localStorage.setItem('products', JSON.stringify(defaultProducts));
-            products = defaultProducts;
-        } else {
-            // Utiliser la liste par défaut si localStorage n'est pas disponible
-            products = defaultProducts;
-        }
+                // Fonction utilitaire pour tester la disponibilité de localStorage
+                function isLocalStorageAvailable() {
+                    try {
+                        const testKey = '__test__';
+                        window.localStorage.setItem(testKey, '1');
+                        window.localStorage.removeItem(testKey);
+                        return true;
+                    } catch (e) {
+                        return false;
+                    }
+                }
+                
+                let products;
+                if (isLocalStorageAvailable()) {
+                    // Si localStorage contient déjà des produits, on les utilise
+                    const stored = localStorage.getItem('products');
+                    if (stored) {
+                        try {
+                            products = JSON.parse(stored);
+                        } catch (e) {
+                            products = defaultProducts;
+                            localStorage.setItem('products', JSON.stringify(defaultProducts));
+                        }
+                    } else {
+                        // Sinon, on initialise avec la liste par défaut
+                        products = defaultProducts;
+                        localStorage.setItem('products', JSON.stringify(defaultProducts));
+                    }
+                } else {
+                    // Si localStorage indisponible, fallback sur la liste par défaut
+                            products = defaultProducts;
+   }
