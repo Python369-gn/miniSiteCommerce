@@ -11,4 +11,4 @@
             { id: 7, name: "Coussin Naturel", price: "14 000 000", category: "home", image: "coussin.jpeg" },
             { id: 8, name: "Enceinte Solaire", price: "5 000 000", category: "electronics", image: "anceinte.jpg" }
         ]; // Fonction utilitaire pour tester la disponibilité de localStorage
-           let products = defaultProducts;
+
