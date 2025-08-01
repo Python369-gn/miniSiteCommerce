@@ -1,22 +1,22 @@
  // Panier (stocké dans localStorage)
-        // let cart = JSON.parse(localStorage.getItem('cart')) || [];
-           let cart =[];
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+           // let cart =[];
         // Sauvegarder les produits dans localStorage
-        // function saveProducts() {
-        //     localStorage.setItem('products', JSON.stringify(products));
-        // }
+        function saveProducts() {
+            localStorage.setItem('products', JSON.stringify(products));
+        }
 
         // // Fonctions utilitaires
-        // function saveCart() {
-        //     localStorage.setItem('cart', JSON.stringify(cart));
-        //     updateCartDisplay();
-        // }
+        function saveCart() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
 
-
+    
            
-           function saveCart() {
-               updateCartDisplay();
-           }
+           // function saveCart() {
+           //     updateCartDisplay();
+           // }
            
                    function updateCartDisplay() {
                        const cartCount = document.getElementById('cartCount');
